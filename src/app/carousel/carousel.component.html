@@ -2,7 +2,7 @@
     <div class="overflow-hidden">
       <div class="whitespace-nowrap transition-transform duration-500" [style.transform]="'translateX(-' + currentSlideIndex * 100 + '%)'">
         <div *ngFor="let slide of slides" class="inline-block w-full h-full">
-          <img [src]="slide.src" [alt]="slide.alt" class="w-full h-full object-cover" />
+          <img [src]="slide.src" [alt]="slide.alt" class="w-full h-full object-cover"/>
         </div>
       </div>
     </div>
