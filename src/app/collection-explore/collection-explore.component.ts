@@ -14,6 +14,11 @@ export class CollectionExploreComponent {
     { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
     { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
     { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
+    { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
+    { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
+    { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
+    { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
+    { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" },
     { src: "assets/images/collection-01.jpg", alt: "Description de l'image 1", title:"Genesis Collective Statue", item:"380/394", categorie:"Music Art" }
     
   ];
@@ -41,8 +46,13 @@ export class CollectionExploreComponent {
   }
 
   nextSlide(): void {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
+    if (this.currentSlideIndex === this.slides.length - 1) {
+      this.currentSlideIndex = 0; 
+    } else {
+      this.currentSlideIndex++;
+    }
   }
+
 
   prevSlide(): void {
     this.currentSlideIndex = 
