@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BannerHomeComponent } from '../banner-home/banner-home.component';
 import { KindofBrowseComponent } from '../kindof-browse/kindof-browse.component';
 import { SectionHowtocreatNtfComponent } from '../section-howtocreat-ntf/section-howtocreat-ntf.component';
+import { CurrentItemsComponent } from '../current-items/current-items.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,7 +10,8 @@ import { SectionHowtocreatNtfComponent } from '../section-howtocreat-ntf/section
   imports: [
     BannerHomeComponent,
     KindofBrowseComponent,
-    SectionHowtocreatNtfComponent
+    SectionHowtocreatNtfComponent,
+    CurrentItemsComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
