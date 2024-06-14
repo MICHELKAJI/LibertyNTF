@@ -2,31 +2,41 @@
     <div class="flex flex-row justify-between">
         <div class="h-[2px] w-20 bg-violet-600"></div>
         <ul class="flex flex-row gap-5">
-            <li (click)="filterByCategory('Musique')" class="p-2 cursor-pointer  hover:bg-blue-600 text-white   rounded-full font-medium">All Items</li>
-            <li (click)="filterByCategory('Sport')"  class="p-2 cursor-pointer hover:bg-blue-600 text-white   rounded-full font-medium">usic Art</li>
-            <li (click)="filterByValue(50)"class="p-2 cursor-pointer hover:bg-blue-600 text-white   rounded-full font-medium">Digital Art</li>
-            <li (click)="resetFilter()"class="p-2 cursor-pointer hover:bg-blue-600 text-white   rounded-full font-medium">Blockchain</li>
-            <li class="p-2  hover:bg-blue-600 text-white cursor-pointer  rounded-full font-medium">Virtual</li>
+            <li (click)="resetFilter()"  class="p-2 cursor-pointer  hover:bg-blue-600 text-white   rounded-full font-medium">All Items</li>
+            <li (click)="filterByCategory('Music')"  class="p-2 cursor-pointer hover:bg-blue-600 text-white   rounded-full font-medium">Music Art</li>
+            <li (click)="filterByCategory('Digital')"class="p-2 cursor-pointer hover:bg-blue-600 text-white   rounded-full font-medium">Digital Art</li>
+            <li (click)="filterByCategory('Blockchain')"class="p-2 cursor-pointer hover:bg-blue-600 text-white   rounded-full font-medium">Blockchain</li>
+            <li (click)="filterByCategory('Virtual')"class="p-2  hover:bg-blue-600 text-white cursor-pointer  rounded-full font-medium">Virtual</li>
           </ul>
     </div>
     <h2 class=" text-white text-3xl font-bold"><strong class="text-blue-600">Items</strong> Currently In The Market.</h2>
 
-    <div class="text-white flex flex-row gap-10 flex-wrap justify-start">
-              <div *ngFor="let item of filteredData " class="flex flex-row p-8 border border-zinc-600  gap-5 bg-zinc-800">
+    <div class="text-white flex flex-row gap-10 flex-wrap ">
+              <div *ngFor="let item of filteredData " class="flex flex-row p-12 border border-zinc-600 rounded-3xl  gap-5 bg-zinc-800">
                 <div><img [src]="item.postImage" alt="" class=" h-64 w-44 rounded-xl "></div>
-                <div>
-                    <h2>{{item.autheur}}</h2>
-                    <div>
-                        <div><img [src]="item.profil" alt="" class="h-14 w-14 rounded-full"></div>
+                <div class=" flex flex-col gap-4">
+                    <h2 class="text-xl font-medium">{{item.autheur}}</h2>
+                    <div class=" flex flex-row items-center gap-2">
+                        <div><img [src]="item.profil" alt="" class="h-10 w-10 rounded-full"></div>
                         <div>
                             <h4>{{item.lien}}</h4>
-                            <p>{{item.mail}}</p>
+                            <p class="text-violet-600">{{item.mail}}</p>
                         </div>
-
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="bg-slate-500 h-[1px] w-full"></div>
+                    <div class="flex flex-row  justify-between gap-20">
+                        <div class="">
+                            <h6>Current Bid</h6>
+                            <p class="text-lg font-bold">{{item.currentBid}}</p>
+                            <p class="font-medium">{{item.montant}}</p>
+                        </div>
+                        <div>
+                            <h6>Ends In</h6>
+                            <p class="text-lg font-bold">{{item.EndsIn}}</p>
+                            <p class="font-medium">{{item.dates}}</p>
+                        </div>
+                    </div>
+                    <div class="text-violet-600 underline leading-3">View Item Details</div>
                 </div>
                
               </div>

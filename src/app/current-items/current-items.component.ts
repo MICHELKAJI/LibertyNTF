@@ -24,11 +24,7 @@ export class CurrentItemsComponent implements OnInit {
   }
 
   filterByCategory(category: string) {
-    this.filteredData = this.data.filter(item => item.autheur === category);
-  }
-
-  filterByValue(value: number) {
-    this.filteredData = this.data.filter(item => item.montant === "value");
+    this.filteredData = this.data.filter(item => item.autheur.includes(category) );
   }
 
   resetFilter() {
